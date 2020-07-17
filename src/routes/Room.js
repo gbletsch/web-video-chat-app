@@ -16,7 +16,7 @@ const Room = (props) => {
         userVideo.current.srcObject = stream
         userStream.current = stream
 
-        socketRef.current = io.connect("http://192.168.0.7:8000") // tem que mudar esse endereço???
+        socketRef.current = io.connect("https://server-video-chat-app.herokuapp.com/")
         socketRef.current.emit('join room', props.match.params.roomID)
 
         socketRef.current.on('other user', userID => {
